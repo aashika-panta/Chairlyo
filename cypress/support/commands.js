@@ -12,6 +12,12 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
+import { loginSelector, selector } from "./selector";
+Cypress.Commands.add("login",() => {
+  cy.get(loginSelector.email).type(Cypress.env("USERNAME"));
+  cy.get(loginSelector.password).clear().type(Cypress.env("PASSWORD"));
+  cy.get(loginSelector.login).click();
+});
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
