@@ -1,5 +1,5 @@
 const { defineConfig } = require("cypress");
-
+require("dotenv").config();
 module.exports = defineConfig({
   allowCypressEnv: true,
   reporter: "cypress-mochawesome-reporter",
@@ -13,7 +13,7 @@ module.exports = defineConfig({
     inlineAssets: true,
   },
   e2e: {
-    baseUrl: process.env.CYPRESS_BASEURL,
+    baseUrl: process.env.CYPRESS_BASE_URL,
 
     env: {
       USERNAME: process.env.CYPRESS_USERNAME,

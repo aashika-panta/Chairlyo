@@ -12,11 +12,11 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
-import { loginSelector, selector } from "./selector";
-Cypress.Commands.add("login",() => {
-  cy.get(loginSelector.email).type(Cypress.env("USERNAME"));
-  cy.get(loginSelector.password).clear().type(Cypress.env("PASSWORD"));
-  cy.get(loginSelector.login).click();
+import { loginselector } from "./selector";
+Cypress.Commands.add("login", () => {
+  cy.get(loginselector.email).type(Cypress.env("USERNAME"));
+  cy.get(loginselector.password).clear().type(Cypress.env("PASSWORD"));
+  cy.xpath(loginselector.login).click();
 });
 //
 // -- This is a child command --
