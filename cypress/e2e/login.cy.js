@@ -8,6 +8,7 @@ describe("validate login Functionallity", () => {
   afterEach(() => {
     cy.log("Test execution  completed ");
   });
+  
   it("Verify login with valid credential", () => {
     cy.get(loginselector.email).type("skilladmin@test.com");
     cy.get(loginselector.password).type("Skill@123");

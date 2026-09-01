@@ -7,9 +7,14 @@ describe("Validate Super Admin Dashboard Functionality", () => {
     cy.login();
   });
 
-  afterEach(() => {
-    cy.log("Test execution completed");
-  });
+ 
+    afterEach(function () {
+    if (this.currentTest.state === "failed") {
+      cy.log("failed " + this.currentTest.title);
+    } else {
+      cy.log("passed " + this.currentTest.title);
+    }
+  }); 
 
   it("Verify super admin dashboard displayed after login", () => {
     cy.get("body").should("contain.text", "Branch");
