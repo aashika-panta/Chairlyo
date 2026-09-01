@@ -17,3 +17,11 @@ export const dashboardselector = {
   branchmenu: "/html[1]/body[1]/div[1]/div[1]/div[1]/aside[1]/div[2]/div[1]/nav[1]/div[1]/a[1]/span[1]/*[name()='svg'][1] ",
   addBranch: "//div[contains(@class,'lg:flex gap-2')]//button[normalize-space()='Add Branch']",
 };
+
+export const search={
+  searchclick:"//input[@placeholder='Search...']",
+  
+}
+export const branchselector={
+
+}
