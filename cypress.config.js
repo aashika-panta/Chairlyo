@@ -18,6 +18,9 @@ module.exports = defineConfig({
     env: {
       USERNAME: process.env.CYPRESS_USERNAME,
       PASSWORD: process.env.CYPRESS_PASSWORD,
+      
+      BRANCH_ADMIN_EMAIL: process.env.BRANCH_ADMIN_EMAIL,
+      BRANCH_ADMIN_PASSWORD: process.env.BRANCH_ADMIN_PASSWORD
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
