@@ -10,9 +10,6 @@ on:
     branches:
       - chairlyo-aashika
 
-  schedule:
-    - cron: "15 10 * * *"
-
 jobs:
   cypress:
     runs-on: ubuntu-latest
