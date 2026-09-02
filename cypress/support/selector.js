@@ -52,3 +52,82 @@ export const branchselector = {
   confirmdelete: "//input[@placeholder='Type Delete Branch here']",
   delete: "/html[1]/body[1]/div[3]/div[4]/button[2]",
 };
+
+export const customer = {
+  management: "//button[.//span[normalize-space()='Management']]",
+  customerpage: "//a[normalize-space()='Customers']",
+  addcustomer: "//button[normalize-space()='Add Customer']",
+  firstname: "#first_name",
+  lastname: "#last_name",
+  phone: '[name="phone"]',
+  email: "#email",
+  dob: "#date_of_birth",
+  monthdropdown: '//button[@aria-label="Choose the Nepali month"]',
+  yeardropdown: 'button[aria-label="Choose the Nepali year"]',
+  address: "#address",
+  note: "#note",
+  genderdropdown: "#radix-_r_2v_",
+  gender: "/html[1]/body[1]/div[7]/div[1]/div[1]/div[1]/div[3]",
+
+  createcustomer: "//button[normalize-space()='Save Changes']",
+};
+
+export const service = {
+  catalog: "//button[.//span[normalize-space()='Catalog']]",
+  servicepage: "//a[normalize-space()='Services']",
+
+  addservice:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+  servicename: "#name",
+  search: "//input[@placeholder='Search...']",
+  categorydropdown: 'button[role="combobox"]',
+  price: "#price",
+  duration: "#duration",
+  commissiontypedropdown: 'button[role="combobox"]',
+
+  value:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]",
+  description: "#description",
+  createservice:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+};
+
+export const staff = {
+  management: "//button[.//span[normalize-space()='Management']]",
+  staffpage: "//a[normalize-space()='Staff']",
+  addstaff: "//button[normalize-space()='Add Staff']",
+  firstname: "#first_name",
+  lastname: "#last_name",
+  phone: "[name='phone']",
+  email: "#email",
+  probadge: "#pro_badges",
+  staffrole: "//button[.//span[normalize-space()='e.g. Bridal Makeup Artist']]",
+  specializationSearch: 'input[placeholder="Search"]',
+  specializationOption:
+    "//button[@role='checkbox'][.//span[normalize-space()='Hair Cutting']]",
+  roleDropdown: "//button[.//span[normalize-space()='e.g. Role 1']]",
+  joineddate: "#joined_date",
+  createstaff:
+    '//*[@id="root"]/div/div[2]/main/div/div/div[1]/div[2]/div/div/button[1]',
+};
+
+export const waiting = {
+  waiting: "//a[.//span[normalize-space()='Waiting']]",
+  addWaiting: "//button[normalize-space()='Add Waiting']",
+  searchCustomer: 'input[placeholder="Enter name or phone number"]',
+  nextButton: "//button[@type='submit' and normalize-space()='Next']",
+  addToWaiting:
+    "//button[@type='button' and normalize-space()='Add to waiting']",
+  addService:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/button[1]",
+  serviceSearch: "//input[@placeholder='Search...']",
+  searchdone: "//button[normalize-space()='Done']",
+  assignstaff:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+  selectstaff:"//span[contains(text(),'Aashika Panta')]",
+  typestaff:"//input[@placeholder='Search...']",
+
+
+  sessionstart:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]",
+  completesession:"//div//div//div//div//div//div//div[1]//div[2]//div[2]//button[2]",
+  submit:"//button[@type='submit']",
+};
