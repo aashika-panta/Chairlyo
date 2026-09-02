@@ -30,6 +30,7 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
         env:
+          CYPRESS_BASEURL: ${{ secrets.CYPRESS_BASEURL }}
           CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           BRANCH_ADMIN_EMAIL: ${{ secrets.BRANCH_ADMIN_EMAIL }}
