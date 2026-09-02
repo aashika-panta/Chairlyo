@@ -7,7 +7,6 @@ describe("Validate Super Admin Dashboard Functionality", () => {
     cy.login();
   });
 
- 
     afterEach(function () {
     if (this.currentTest.state === "failed") {
       cy.log("failed " + this.currentTest.title);

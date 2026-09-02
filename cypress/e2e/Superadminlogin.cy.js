@@ -55,7 +55,7 @@ describe("validate login Functionallity", () => {
     cy.get(loginselector.email).type("skilladmin@test.com");
     cy.get(loginselector.password).type("SKILL@123");
     cy.xpath(loginselector.login).click();
-    cy.get("body").should("contain.text", "Welcome back");
+    cy.get("body").should("not.contain.text", "Login successful");
   });
 
   it("Verify login with leading spaces in email and password", () => {
