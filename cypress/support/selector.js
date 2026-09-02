@@ -123,7 +123,7 @@ export const waiting = {
   serviceSearch: "//input[@placeholder='Search...']",
   searchdone: "//button[normalize-space()='Done']",
   assignstaff:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
-  selectstaff:"//span[contains(text(),'Aashika Panta')]",
+  selectstaff:"//span[contains(text(),'puja silwal')]",
   typestaff:"//input[@placeholder='Search...']",
 
 

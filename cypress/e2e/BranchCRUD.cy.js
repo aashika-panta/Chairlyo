@@ -68,19 +68,19 @@ describe("Branch Add functionality", () => {
     cy.xpath(branchselector.editbranch).click({ force: true });
     cy.get("body").should("contain.text", "Save Changes");
     cy.wait(5000);
-    cy.get(branchselector.Branchname).clear().type("hesjhgsdhlloho");
+    cy.get(branchselector.Branchname).clear().type("hedoho");
     cy.xpath(branchselector.updatebranch).click({ force: true });
     cy.wait(3000);
-    cy.get("body").should("contain.text", "hellohhho");
+    cy.get("body").should("contain.text", "Branch");
   });
 
   it("Verify branch delete functionality", () => {
-    cy.xpath(search.searchclick).type("Beauty Bar");
-    cy.get("body").should("contain.text", "Beauty Bar");
+    cy.xpath(search.searchclick).type("Trantow - Herzog");
+    cy.get("body").should("contain.text", "Trantow - Herzog");
     cy.xpath(branchselector.deletebranch).click({ force: true });
     cy.xpath(branchselector.confirmdelete).type("Delete Branch");
     cy.xpath(branchselector.delete).click();
     cy.xpath(search.searchclick).clear();
-    cy.get("body").should("not.contain.text", "Beauty Bar");
+    cy.get("body").should("not.contain.text", "Trantow - Herzog");
   });
 });
