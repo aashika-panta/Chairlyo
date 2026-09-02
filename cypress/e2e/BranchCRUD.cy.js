@@ -68,19 +68,19 @@ describe("Branch Add functionality", () => {
     cy.xpath(branchselector.editbranch).click({ force: true });
     cy.get("body").should("contain.text", "Save Changes");
     cy.wait(5000);
-    cy.get(branchselector.Branchname).clear().type("Beautysalon");
+    cy.get(branchselector.Branchname).clear().type("hesjhgsdhlloho");
     cy.xpath(branchselector.updatebranch).click({ force: true });
     cy.wait(3000);
-    cy.get("body").should("contain.text", "Beautysalon");
+    cy.get("body").should("contain.text", "hellohhho");
   });
 
-  it.only("Verify branch delete functionality", () => {
-    cy.xpath(search.searchclick).type("Tremblay - Kertzmann");
-    cy.get("body").should("contain.text", "Tremblay - Kertzmann");
+  it("Verify branch delete functionality", () => {
+    cy.xpath(search.searchclick).type("Beauty Bar");
+    cy.get("body").should("contain.text", "Beauty Bar");
     cy.xpath(branchselector.deletebranch).click({ force: true });
     cy.xpath(branchselector.confirmdelete).type("Delete Branch");
     cy.xpath(branchselector.delete).click();
     cy.xpath(search.searchclick).clear();
-    cy.get("body").should("not.contain.text", "Beautysalon");
+    cy.get("body").should("not.contain.text", "Beauty Bar");
   });
 });
