@@ -14,8 +14,8 @@ describe("Staff CRUD Functionality", () => {
 
     cy.get(staff.firstname).type("Aashika");
     cy.get(staff.lastname).type("Panta");
-    cy.get(staff.phone).clear().type("+977 9800009000");
-    cy.get(staff.email).type("akjhsa@example.com");
+    cy.get(staff.phone).clear().type("+977 9890976543");
+    cy.get(staff.email).type("abhjghhcd@example.com");
 
     cy.xpath(staff.staffrole).should("be.visible").click();
     cy.get('input[placeholder="Search"]').filter(":visible").first().clear().type("Hair Cutting");

@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - chairlyo-aashika
+  workflow_dispatch:
 
   pull_request:
     branches:
       - chairlyo-aashika
-
-  schedule:
-    - cron: "15 10 * * *"
 
 jobs:
   cypress:
