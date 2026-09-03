@@ -70,6 +70,17 @@ export const customer = {
   gender: "/html[1]/body[1]/div[7]/div[1]/div[1]/div[1]/div[3]",
 
   createcustomer: "//button[normalize-space()='Save Changes']",
+
+  searchcustomer: "//input[@placeholder='Search...']",
+  editcustomer:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]/*[name()='svg'][1]",
+
+  deletecustomer:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/*[name()='svg'][1]",
+  typedelete: "//input[@placeholder='Type Delete here']",
+confirmDelete:
+  "//div[@data-slot='dialog-footer']//button[@data-variant='delete']",
+  save: "//button[normalize-space()='Save Changes']",
 };
 
 export const service = {
@@ -122,12 +133,14 @@ export const waiting = {
     "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/button[1]",
   serviceSearch: "//input[@placeholder='Search...']",
   searchdone: "//button[normalize-space()='Done']",
-  assignstaff:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
-  selectstaff:"//span[contains(text(),'puja silwal')]",
-  typestaff:"//input[@placeholder='Search...']",
+  assignstaff:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+  selectstaff: "//span[contains(text(),'puja silwal')]",
+  typestaff: "//input[@placeholder='Search...']",
 
-
-  sessionstart:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]",
-  completesession:"//div//div//div//div//div//div//div[1]//div[2]//div[2]//button[2]",
-  submit:"//button[@type='submit']",
+  sessionstart:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]",
+  completesession:
+    "//div//div//div//div//div//div//div[1]//div[2]//div[2]//button[2]",
+  submit: "//button[@type='submit']",
 };

@@ -14,13 +14,19 @@ describe("Customer CRUD Functionality", () => {
     cy.get(customer.phone).clear().type("+977 9876543210");
     cy.get(customer.email).type("aaaa@gmail.com");
 
-    cy.contains('button[role="combobox"]', "Select Gender").should("be.visible").click();
+    cy.contains('button[role="combobox"]', "Select Gender")
+      .should("be.visible")
+      .click();
     cy.get('[role="option"]').contains("Female").click();
 
     cy.get(customer.dob).should("be.visible").click();
-    cy.get('button[aria-label="Choose the Nepali month"]').should("be.visible").click();
+    cy.get('button[aria-label="Choose the Nepali month"]')
+      .should("be.visible")
+      .click();
     cy.contains('[role="option"]', "Bhadra").should("be.visible").click();
-    cy.get('button[aria-label="Choose the Nepali year"]').should("be.visible").click();
+    cy.get('button[aria-label="Choose the Nepali year"]')
+      .should("be.visible")
+      .click();
     cy.contains('[role="option"]', "2079").should("be.visible").click();
     cy.contains("button", /^22$/).should("be.visible").click();
 
@@ -28,5 +34,25 @@ describe("Customer CRUD Functionality", () => {
     cy.get(customer.note).type("helllo");
 
     cy.xpath(customer.createcustomer).click();
+  });
+
+  it("Verify customer edit Functionelity", () => {
+    cy.xpath(customer.customerpage).click();
+    cy.xpath(customer.searchcustomer).type("aashikaa").click();
+    cy.xpath(customer.editcustomer).click();
+    cy.get(customer.firstname).clear().type("jyotsana");
+    cy.xpath(customer.save).click();
+  });
+
+  it("Verify Customer can be deleted", () => {
+    cy.xpath(customer.customerpage).click();
+    cy.xpath(customer.searchcustomer).type("aa asd");
+    cy.xpath(customer.deletecustomer).click();
+    cy.xpath(customer.typedelete).type("Delete");
+    cy.xpath(customer.confirmDelete)
+      .should("exist")
+      .should("be.visible")
+      .should("not.be.disabled")
+      .click();
   });
 });
