@@ -31,7 +31,7 @@ jobs:
         uses: cypress-io/github-action@v6
         env:
           CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL}}
-          CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
+          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           BRANCH_ADMIN_EMAIL: ${{ secrets.BRANCH_ADMIN_EMAIL }}
           BRANCH_ADMIN_PASSWORD: ${{ secrets.BRANCH_ADMIN_PASSWORD }}
