@@ -10,7 +10,7 @@ describe("Waiting Functionality", () => {
     cy.xpath(waiting.waiting).click();
     cy.xpath(waiting.addWaiting).click({ force: true, multiple: true });
 
-    cy.get(waiting.searchCustomer).type("aashikaa panta");
+    cy.get(waiting.searchCustomer).type("jyotsana panta");
     cy.contains("aashikaa panta").click({ force: true });
 
     cy.xpath(waiting.nextButton)

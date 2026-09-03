@@ -2,6 +2,7 @@ import { customer } from "../support/selector";
 
 describe("Customer CRUD Functionality", () => {
   beforeEach(() => {
+    
     cy.visit("/");
     cy.branchAdminLogin();
     cy.xpath(customer.management).click();
@@ -44,15 +45,18 @@ describe("Customer CRUD Functionality", () => {
     cy.xpath(customer.save).click();
   });
 
-  it("Verify Customer can be deleted", () => {
+  it.only("Verify Customer can be deleted", () => {
     cy.xpath(customer.customerpage).click();
-    cy.xpath(customer.searchcustomer).type("aa asd");
+    cy.xpath(customer.searchcustomer).type("983723 209383247");
+    cy.wait(2000);
     cy.xpath(customer.deletecustomer).click();
     cy.xpath(customer.typedelete).type("Delete");
+    cy.wait(2000);
     cy.xpath(customer.confirmDelete)
       .should("exist")
       .should("be.visible")
       .should("not.be.disabled")
       .click();
+      cy.wait(3000);
   });
 });
