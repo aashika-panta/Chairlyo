@@ -45,9 +45,9 @@ describe("Customer CRUD Functionality", () => {
     cy.xpath(customer.save).click();
   });
 
-  it.only("Verify Customer can be deleted", () => {
+  it("Verify Customer can be deleted", () => {
     cy.xpath(customer.customerpage).click();
-    cy.xpath(customer.searchcustomer).type("983723 209383247");
+    cy.xpath(customer.searchcustomer).type("jyotsana panta");
     cy.wait(2000);
     cy.xpath(customer.deletecustomer).click();
     cy.xpath(customer.typedelete).type("Delete");

@@ -74,7 +74,7 @@ describe("Branch Add functionality", () => {
     cy.get("body").should("contain.text", "Branch");
   });
 
-  it.only("Verify branch delete functionality", () => {
+  it("Verify branch delete functionality", () => {
     cy.xpath(search.searchclick).type("Morar - Crooks");
     cy.get("body").should("contain.text", "Morar - Crooks");
     cy.xpath(branchselector.deletebranch).click({ force: true });

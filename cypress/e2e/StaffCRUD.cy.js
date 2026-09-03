@@ -12,10 +12,10 @@ describe("Staff CRUD Functionality", () => {
     cy.xpath(staff.staffpage).click();
     cy.xpath(staff.addstaff).eq(0).click({ force: true });
 
-    cy.get(staff.firstname).type("Aashika");
+    cy.get(staff.firstname).type("Aaska ");
     cy.get(staff.lastname).type("Panta");
-    cy.get(staff.phone).clear().type("+977 9090906543");
-    cy.get(staff.email).type("abdfdjsshcd@example.com");
+    cy.get(staff.phone).clear().type("+977 9099906543");
+    cy.get(staff.email).type("abdfdjhdhcd@example.com");
 
     cy.xpath(staff.staffrole).should("be.visible").click();
     cy.get('input[placeholder="Search"]').filter(":visible").first().clear().type("Hair Cutting");
