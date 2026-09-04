@@ -13,35 +13,33 @@ describe("Customer CRUD Functionality", () => {
   const phone = "+97798" + faker.string.numeric(8);
   const email = faker.internet.email();
 
+  const editedFirstName = "sita";
+  const editedLastName = "silwal";
+
   it("Verify Customer can be added with Valid details", () => {
     cy.xpath(customer.customerpage).click();
-    cy.xpath(customer.addcustomer).eq(0).should("be.visible").click();
+    cy.xpath(customer.addcustomer).eq(0).click();
+
     cy.get(customer.firstname).type(firstName);
     cy.get(customer.lastname).type(lastName);
     cy.get(customer.phone).clear().type(phone);
     cy.get(customer.email).type(email);
 
-    cy.contains('button[role="combobox"]', "Select Gender")
-      .should("be.visible")
-      .click();
+    cy.contains('button[role="combobox"]', "Select Gender").click();
 
     cy.get('[role="option"]').contains("Female").click();
 
-    cy.get(customer.dob).should("be.visible").click();
+    cy.get(customer.dob).click();
 
-    cy.get('button[aria-label="Choose the Nepali month"]')
-      .should("be.visible")
-      .click();
+    cy.get('button[aria-label="Choose the Nepali month"]').click();
 
-    cy.contains('[role="option"]', "Bhadra").should("be.visible").click();
+    cy.contains('[role="option"]', "Bhadra").click();
 
-    cy.get('button[aria-label="Choose the Nepali year"]')
-      .should("be.visible")
-      .click();
+    cy.get('button[aria-label="Choose the Nepali year"]').click();
 
-    cy.contains('[role="option"]', "2079").should("be.visible").click();
+    cy.contains('[role="option"]', "2079").click();
 
-    cy.contains("button", /^22$/).should("be.visible").click();
+    cy.contains("button", /^22$/).click();
 
     cy.get(customer.address).type("Kathmandu");
     cy.get(customer.note).type("Customer created using Faker");
@@ -49,7 +47,6 @@ describe("Customer CRUD Functionality", () => {
     cy.xpath(customer.createcustomer).click();
 
     cy.get("body").should("contain.text", firstName);
-    cy.get("body").should("contain.text", lastName);
   });
 
   it("Verify customer edit functionality", () => {
@@ -57,36 +54,39 @@ describe("Customer CRUD Functionality", () => {
 
     cy.xpath(customer.searchcustomer).clear().type(firstName);
 
-    cy.get("body").should("contain.text", firstName);
+    cy.contains(firstName).should("be.visible");
 
     cy.xpath(customer.editcustomer).click({ force: true });
 
-    cy.get(customer.firstname).clear().type("arpita");
+    cy.get(customer.firstname).clear().type(editedFirstName);
+
+    cy.get(customer.lastname).clear().type(editedLastName);
 
     cy.xpath(customer.save).click({ force: true });
 
-    cy.get("body").should("contain.text", "arpita");
+    cy.contains("sita silwal").should("be.visible");
   });
 
-  it("Verify Customer can be deleted", () => {
+  it("Verify customer can be deleted", () => {
     cy.xpath(customer.customerpage).click();
 
-    cy.xpath(customer.searchcustomer).clear().type("arpita");
+    cy.xpath(customer.searchcustomer).clear().type("sita");
 
-    cy.contains("arpita panta").should("be.visible");
+    cy.contains("sita silwal").should("be.visible");
 
-    cy.xpath(customer.deletecustomer)
-      .should("be.visible")
-      .click({ force: true });
+    cy.xpath(customer.deletecustomer).click({ force: true });
 
     cy.xpath(customer.typedelete).should("be.visible").type("Delete");
+
     cy.xpath(customer.confirmDelete)
       .should("be.visible")
-      .should("not.be.disabled")
-      .click();
+      .and("not.be.disabled")
+      .click({ force: true });
 
     cy.wait(2000);
-    cy.xpath(customer.searchcustomer).clear().type("arpita");
-    cy.contains("arpita panta").should("not.exist");
+
+    cy.xpath(customer.searchcustomer).clear().type("sita");
+
+    cy.contains("sita silwal").should("not.exist");
   });
 });

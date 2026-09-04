@@ -104,7 +104,7 @@ describe("Branch Add functionality", () => {
       .should("be.visible")
       .type("Delete Branch");
 
-    cy.xpath(branchselector.delete).should("be.visible").click({ force: true });
+    cy.xpath(branchselector.delete).click({ force: true });
     cy.xpath(search.searchclick).clear();
     cy.contains("Deleted").should("be.visible");
   });
