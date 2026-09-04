@@ -2,7 +2,7 @@ import { branchselector, search } from "../support/selector";
 import { faker } from "@faker-js/faker";
 
 describe("Branch Add functionality", () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit("/");
     cy.login();
   });
