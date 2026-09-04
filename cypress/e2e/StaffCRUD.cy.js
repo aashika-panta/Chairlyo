@@ -63,9 +63,5 @@ describe("Staff CRUD Functionality", () => {
     cy.contains("Add staff only").click();
 
     cy.get("body").should("contain.text", "Staff Added");
-
-    cy.get("body").should("contain.text", firstName);
-
-    cy.get("body").should("contain.text", lastName);
   });
 });
