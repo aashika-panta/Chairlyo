@@ -75,12 +75,16 @@ describe("Branch Add functionality", () => {
   });
 
   it("Verify branch delete functionality", () => {
-    cy.xpath(search.searchclick).type("Morar - Crooks");
-    cy.get("body").should("contain.text", "Morar - Crooks");
-    cy.xpath(branchselector.deletebranch).click({ force: true });
-    cy.xpath(branchselector.confirmdelete).type("Delete Branch");
-    cy.xpath(branchselector.delete).click();
+    cy.xpath(search.searchclick).clear().type("hedoho");
+    cy.contains("hedoho").should("be.visible");
+    cy.xpath(`//tbody/tr[contains(., "hedoho")]//div[@title="Delete branch"]`)
+      .should("be.visible")
+      .click({ force: true });
+    cy.xpath(branchselector.confirmdelete)
+      .should("be.visible")
+      .type("Delete Branch");
+    cy.xpath(branchselector.delete).should("be.visible").click();
     cy.xpath(search.searchclick).clear();
-    cy.get("body").should("not.contain.text", "Morar - Crooks");
+    cy.contains("hedoho").should("not.exist");
   });
 });
