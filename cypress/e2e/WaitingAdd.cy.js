@@ -10,7 +10,7 @@ describe("Waiting Functionality", () => {
     cy.xpath(waiting.waiting).click();
     cy.xpath(waiting.addWaiting).click({ force: true, multiple: true });
 
-    cy.get(waiting.searchCustomer).type("jyotsana panta");
+    cy.get(waiting.searchCustomer).type("anupa panta");
     cy.contains("aashikaa panta").click({ force: true });
 
     cy.xpath(waiting.nextButton)
@@ -22,7 +22,7 @@ describe("Waiting Functionality", () => {
     cy.contains("Hair Cutting").click({ force: true });
     cy.xpath(waiting.searchdone).click({ force: true });
     cy.xpath(waiting.assignstaff).click({ force: true });
-    cy.xpath(waiting.selectstaff).click({ force: true});
+    cy.xpath(waiting.selectstaff).click({ force: true });
     // cy.contains("Aashika Panta").click({ force: true });
     cy.xpath(waiting.addToWaiting).click({ force: true });
     cy.get("body").should("contain.text", "Added to waiting");

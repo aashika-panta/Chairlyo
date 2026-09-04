@@ -10,10 +10,10 @@ describe("Customer CRUD Functionality", () => {
   it("Verify Customer can be added with Valid details", () => {
     cy.xpath(customer.customerpage).click();
     cy.xpath(customer.addcustomer).eq(0).should("be.visible").click();
-    cy.get(customer.firstname).type("aashikaa");
+    cy.get(customer.firstname).type("aashka");
     cy.get(customer.lastname).type("panta");
-    cy.get(customer.phone).clear().type("+977 9876543210");
-    cy.get(customer.email).type("aaaa@gmail.com");
+    cy.get(customer.phone).clear().type("+977 9879543210");
+    cy.get(customer.email).type("aadaa@gmail.com");
 
     cy.contains('button[role="combobox"]', "Select Gender")
       .should("be.visible")
@@ -39,15 +39,15 @@ describe("Customer CRUD Functionality", () => {
 
   it("Verify customer edit Functionelity", () => {
     cy.xpath(customer.customerpage).click();
-    cy.xpath(customer.searchcustomer).type("aashikaa").click();
+    cy.xpath(customer.searchcustomer).type("alisa").click();
     cy.xpath(customer.editcustomer).click();
-    cy.get(customer.firstname).clear().type("jyotsana");
+    cy.get(customer.firstname).clear().type("arpita");
     cy.xpath(customer.save).click();
   });
 
   it("Verify Customer can be deleted", () => {
     cy.xpath(customer.customerpage).click();
-    cy.xpath(customer.searchcustomer).type("jyotsana panta");
+    cy.xpath(customer.searchcustomer).type("aaska panta");
     cy.wait(2000);
     cy.xpath(customer.deletecustomer).click();
     cy.xpath(customer.typedelete).type("Delete");

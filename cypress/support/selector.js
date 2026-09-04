@@ -48,7 +48,7 @@ export const branchselector = {
   editbranch:
     "//tbody/tr[2]//*[name()='svg']//*[name()='path' and contains(@d,'M12 3H5a2 ')]",
   updatebranch: "//button[normalize-space()='Save Changes']",
-  deletebranch: "//*[name()='path' and contains(@d,'M10 11v6')]",
+  deletebranch: "//div[@title='Delete branch']",
   confirmdelete: "//input[@placeholder='Type Delete Branch here']",
   delete: "/html[1]/body[1]/div[3]/div[4]/button[2]",
 };
