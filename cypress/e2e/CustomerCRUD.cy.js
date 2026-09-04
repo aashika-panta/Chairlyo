@@ -73,19 +73,20 @@ describe("Customer CRUD Functionality", () => {
 
     cy.xpath(customer.searchcustomer).clear().type("arpita");
 
-    cy.get("body").should("contain.text", "arpita");
+    cy.contains("arpita panta").should("be.visible");
 
-    cy.xpath(customer.deletecustomer).click({ force: true });
+    cy.xpath(customer.deletecustomer)
+      .should("be.visible")
+      .click({ force: true });
 
     cy.xpath(customer.typedelete).should("be.visible").type("Delete");
-
     cy.xpath(customer.confirmDelete)
       .should("be.visible")
       .should("not.be.disabled")
       .click();
 
-    cy.xpath(customer.searchcustomer).clear();
-
-    cy.get("body").should("not.contain.text", "arpita");
+    cy.wait(2000);
+    cy.xpath(customer.searchcustomer).clear().type("arpita");
+    cy.contains("arpita panta").should("not.exist");
   });
 });

@@ -76,10 +76,10 @@ export const customer = {
     "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]/*[name()='svg'][1]",
 
   deletecustomer:
-    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/*[name()='svg'][1]",
+    "//tbody/tr[contains(., 'arpita panta')]//*[name()='svg'][last()]",
   typedelete: "//input[@placeholder='Type Delete here']",
-confirmDelete:
-  "//div[@data-slot='dialog-footer']//button[@data-variant='delete']",
+  confirmDelete:
+    "//div[@data-slot='dialog-footer']//button[@data-variant='delete']",
   save: "//button[normalize-space()='Save Changes']",
 };
 
