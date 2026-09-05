@@ -2,7 +2,7 @@ name: Cypress Tests
 
 on:
   schedule:
-    - cron: "15 6 * * *"
+    - cron: "57 5 * * *"
     - cron: "15 10 * * *"
 
   workflow_dispatch:
