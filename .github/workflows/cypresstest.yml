@@ -10,6 +10,9 @@ on:
       - chairlyo-aashika
 
   workflow_dispatch:
+  schedule:
+    - cron: "43 2 * * *"
+    - cron: "45 10 * * *"
 
 jobs:
   cypress:
