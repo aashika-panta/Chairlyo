@@ -14,6 +14,9 @@ describe("Staff CRUD Functionality", () => {
   const phone = "+977 98" + faker.string.numeric(8);
   const email = faker.internet.email();
 
+  const editedFirstName = "Sita";
+  const editedLastName = "Silwal";
+
   it("Verify staff can be added with valid details", () => {
     cy.xpath(staff.staffpage).click();
     cy.xpath(staff.addstaff).eq(0).click({ force: true });
@@ -63,5 +66,26 @@ describe("Staff CRUD Functionality", () => {
     cy.contains("Add staff only").click();
 
     cy.get("body").should("contain.text", "Staff Added");
+  });
+
+  it("Verify staff edit functionality", () => {
+    cy.xpath(staff.staffpage).click();
+    cy.xpath(staff.searchstaff).clear().type(firstName);
+    cy.contains(firstName).should("be.visible");
+    cy.xpath(staff.editstaff).click({ force: true });
+    cy.get(staff.firstname).clear().type(editedFirstName);
+    cy.get(staff.lastname).clear().type(editedLastName);
+    cy.xpath(staff.save).click({ force: true });
+    cy.contains(`${editedFirstName} ${editedLastName}`).should("exist");
+  });
+
+  it("Verify edited staff can be deleted", () => {
+    cy.xpath(staff.staffpage).click();
+    cy.xpath(staff.searchstaff).clear().type(editedFirstName);
+    cy.contains(`${editedFirstName} ${editedLastName}`).should("be.visible");
+    cy.xpath(staff.deleteicon).click({ force: true });
+    cy.xpath(staff.deletetype).type("Delete");
+    cy.get(staff.confirmdelete).should("be.visible").and("be.enabled").click();
+    cy.contains(`${editedFirstName} ${editedLastName}`).should("not.exist");
   });
 });

@@ -119,6 +119,13 @@ export const staff = {
   joineddate: "#joined_date",
   createstaff:
     '//*[@id="root"]/div/div[2]/main/div/div/div[1]/div[2]/div/div/button[1]',
+  editstaff:"//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M18.375 2.')]",
+  save:"//button[normalize-space()='Save Changes']",
+  deleteicon:"//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M8 6V4a2 2')]",
+  deletetype:"//input[@placeholder='Type Delete here']",
+  confirmdelete:'button[data-variant="delete"]',
+searchstaff:'//*[@id="root"]/div/div[2]/main/div/div[1]/div[2]/div[1]/div[1]/input',
+
 };
 
 export const waiting = {
