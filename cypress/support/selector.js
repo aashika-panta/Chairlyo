@@ -100,6 +100,10 @@ export const service = {
   description: "#description",
   createservice:
     "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+    editicon:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/a[1]/*[name()='svg'][1]",
+  updateservice:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+deleteicon:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/div[1]/*[name()='svg'][1]",
+confirmdelete:"//button[normalize-space()='Confirm Delete']",
 };
 
 export const staff = {
