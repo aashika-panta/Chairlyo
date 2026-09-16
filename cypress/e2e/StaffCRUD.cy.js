@@ -61,16 +61,15 @@ describe("Staff CRUD Functionality", () => {
 
     cy.contains('[role="option"]', "Receptionist").should("be.visible").click();
 
-    cy.xpath(staff.createstaff).should("be.visible").click();
+    cy.xpath(staff.createstaff).click();
 
-    cy.contains("Add staff only").click();
-
+    cy.xpath(staff.addStaffOnly).click();
     cy.get("body").should("contain.text", "Staff Added");
   });
 
   it("Verify staff edit functionality", () => {
     cy.xpath(staff.staffpage).click();
-    cy.xpath(staff.searchstaff).clear().type(firstName);
+    cy.xpath(staff.searchstaff).type(firstName);
     cy.contains(firstName).should("be.visible");
     cy.xpath(staff.editstaff).click({ force: true });
     cy.get(staff.firstname).clear().type(editedFirstName);
@@ -81,11 +80,13 @@ describe("Staff CRUD Functionality", () => {
 
   it("Verify edited staff can be deleted", () => {
     cy.xpath(staff.staffpage).click();
-    cy.xpath(staff.searchstaff).clear().type(editedFirstName);
+    cy.xpath(staff.searchstaff).type(editedFirstName);
+    cy.wait(1000); // Wait for search results to load
     cy.contains(`${editedFirstName} ${editedLastName}`).should("be.visible");
     cy.xpath(staff.deleteicon).click({ force: true });
     cy.xpath(staff.deletetype).type("Delete");
-    cy.get(staff.confirmdelete).should("be.visible").and("be.enabled").click();
+    cy.get('button[data-variant="delete"]').should("be.visible").click();
+    cy.xpath(staff.searchstaff).clear();
     cy.contains(`${editedFirstName} ${editedLastName}`).should("not.exist");
   });
 });

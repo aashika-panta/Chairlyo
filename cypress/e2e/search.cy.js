@@ -1,6 +1,6 @@
 import { search } from "../support/selector";
 
-describe("serach functionality", () => {
+describe("search functionality", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.login();
@@ -18,7 +18,7 @@ describe("serach functionality", () => {
     cy.get("body").should("contain.text", "Beauty Bliss");
   });
 
-  it.only(" Verify branch can be searched with partial name", () => {
+  it(" Verify branch can be searched with partial name", () => {
     cy.xpath(search.searchclick).type("Beauty Bl");
     cy.get("body").should("contain.text", "Beauty Bliss");
   });

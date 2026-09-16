@@ -48,7 +48,8 @@ export const branchselector = {
   editbranch:
     "//tbody/tr[2]//*[name()='svg']//*[name()='path' and contains(@d,'M12 3H5a2 ')]",
   updatebranch: "//button[normalize-space()='Save Changes']",
-  deletebranch: "//div[@title='Delete branch']",
+  deletebranch:
+    "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M8 6V4a2 2')]",
   confirmdelete: "//input[@placeholder='Type Delete Branch here']",
   delete: "/html[1]/body[1]/div[3]/div[4]/button[2]",
 };
@@ -73,10 +74,11 @@ export const customer = {
 
   searchcustomer: "//input[@placeholder='Search...']",
   editcustomer:
-    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]/*[name()='svg'][1]",
+    "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M18.375 2.')]",
 
-  deletecustomer:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/div[1]/*[name()='svg'][1]",
-   typedelete: "//input[@placeholder='Type Delete here']",
+  deletecustomer:
+    "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M10 11v6')]",
+  typedelete: "//input[@placeholder='Type Delete here']",
   confirmDelete:
     "//div[@data-slot='dialog-footer']//button[@data-variant='delete']",
   save: "//button[normalize-space()='Save Changes']",
@@ -85,9 +87,8 @@ export const customer = {
 export const service = {
   catalog: "//button[.//span[normalize-space()='Catalog']]",
   servicepage: "//a[normalize-space()='Services']",
-
   addservice:
-    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "//button[@data-slot='button' and @data-variant='default' and @data-size='default' and normalize-space()='Add Service']",
   servicename: "#name",
   search: "//input[@placeholder='Search...']",
   categorydropdown: 'button[role="combobox"]',
@@ -100,10 +101,13 @@ export const service = {
   description: "#description",
   createservice:
     "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
-    editicon:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/a[1]/*[name()='svg'][1]",
-  updateservice:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
-deleteicon:"/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/div[1]/*[name()='svg'][1]",
-confirmdelete:"//button[normalize-space()='Confirm Delete']",
+  editicon:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/a[1]/*[name()='svg'][1]",
+  updateservice:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+  deleteicon:
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[1]/div[1]/*[name()='svg'][1]",
+  confirmdelete: "//button[normalize-space()='Confirm Delete']",
 };
 
 export const staff = {
@@ -123,13 +127,18 @@ export const staff = {
   joineddate: "#joined_date",
   createstaff:
     '//*[@id="root"]/div/div[2]/main/div/div/div[1]/div[2]/div/div/button[1]',
-  editstaff:"//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M18.375 2.')]",
-  save:"//button[normalize-space()='Save Changes']",
-  deleteicon:"//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M8 6V4a2 2')]",
-  deletetype:"//input[@placeholder='Type Delete here']",
-  confirmdelete:'button[data-variant="delete"]',
-searchstaff:'//*[@id="root"]/div/div[2]/main/div/div[1]/div[2]/div[1]/div[1]/input',
+  searchstaff: "//input[@placeholder='Search...']",
+  save: "//button[normalize-space()='Save Changes']",
+  deleteicon:
+    "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M8 6V4a2 2')]",
+  deletetype: "//input[@placeholder='Type Delete here']",
+  confirmdelete:
+    "//button[@data-variant='delete' and normalize-space()='Confirm Delete']",
 
+  editstaff:
+    "//tbody/tr[1]//*[name()='svg']//*[name()='path' and contains(@d,'M18.375 2.')]",
+  addStaffOnly:
+    "//button[@data-slot='button' and normalize-space()='Add staff only']",
 };
 
 export const waiting = {
@@ -137,14 +146,13 @@ export const waiting = {
   addWaiting: "//button[normalize-space()='Add Waiting']",
   searchCustomer: 'input[placeholder="Enter name or phone number"]',
   nextButton: "//button[@type='submit' and normalize-space()='Next']",
-  addToWaiting:
-    "//button[@type='button' and normalize-space()='Add to waiting']",
+  addToWaiting: "//button[@type='button'][normalize-space()='Add to waiting']",
   addService:
-    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/button[1]",
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/button[1]",
   serviceSearch: "//input[@placeholder='Search...']",
   searchdone: "//button[normalize-space()='Done']",
   assignstaff:
-    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "/html[1]/body[1]/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
   selectstaff:
     "//span[contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'puja silwal')]",
   typestaff: "//input[@placeholder='Search...']",

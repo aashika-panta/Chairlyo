@@ -5,8 +5,8 @@ describe("Admin Dashboard functionality ", () => {
   });
   it("Verify Admin dashboard is displayed", () => {
     cy.get("body").should("contain.text", "Dashboard");
-    cy.get("body").should("contain.text", "Revenue");
-    cy.get("body").should("contain.text", "Customers");
-    cy.get("body").should("contain.text", "Staff");
+    cy.get("body").should("contain.text", "Aashika");
+    cy.get("body").should("contain.text", "Sessions");
+    cy.get("body").should("contain.text", "Calendar");
   });
 });

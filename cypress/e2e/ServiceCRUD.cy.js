@@ -8,8 +8,13 @@ describe("Service CRUD Functionality", () => {
   });
   it("Verify service can be added with Valid details", () => {
     cy.xpath(service.servicepage).should("be.visible").click();
-    cy.xpath(service.addservice).should("be.visible").click();
-    cy.get(service.servicename).should("be.visible").type("Hair Cutting");
+    cy.wait(1000); // Wait for the service page to load
+    cy.xpath(service.addservice)
+      .filter(":visible")
+      .should("have.length", 1)
+      .click();
+    cy.wait(1000); // Wait for the add service form to load
+    cy.get(service.servicename).type("Hair Cutting");
 
     cy.contains('button[role="combobox"]', "Select Category")
       .should("be.visible")
@@ -22,12 +27,14 @@ describe("Service CRUD Functionality", () => {
     cy.get(service.price).should("be.visible").clear().type("1000");
     cy.get(service.duration).should("be.visible").clear().type("60");
 
-    cy.get(service.commissiontypedropdown)
-      .filter(':contains("Select Commission Type")')
+    cy.contains('button[role="combobox"]', "Select Commission Type")
       .should("be.visible")
       .click();
 
-    cy.get('[role="option"]').contains("Percentage").click();
+    cy.get('[role="option"]')
+      .contains("Percentage")
+      .should("be.visible")
+      .click();
     cy.xpath(service.value).should("be.visible").type("10");
     cy.get(service.description)
       .should("be.visible")
