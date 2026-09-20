@@ -16,7 +16,7 @@ describe("Branch Add functionality", () => {
   const branchEmail = faker.internet.email();
   const adminEmail = faker.internet.email();
 
-  const phone = "98" + faker.string.numeric(8);
+  const phone = "984" + faker.string.numeric(7);
 
   const password = "Branch@123";
 

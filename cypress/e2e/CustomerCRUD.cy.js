@@ -10,7 +10,7 @@ describe("Customer CRUD Functionality", () => {
 
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
-  const phone = "+97798" + faker.string.numeric(8);
+  const phone = "+977984" + faker.string.numeric(7);
   const email = faker.internet.email();
 
   const editedFirstName = "sita";
